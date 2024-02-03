@@ -8,7 +8,7 @@ const roomService = require('./service/roomService');
 const cors = require("cors");
 
 const app = express();
-app.use(cors(corsOptions));
+
 const server = require('http').createServer(app);
 const corsOptions = {
     origin: "https://echo-talk-devendra-arun-vt.onrender.com" // frontend URI (ReactJS)
@@ -19,6 +19,7 @@ const io = require('socket.io')(server, {
         methods: ['GET', 'POST']
     }
 })
+app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json({ limit: '8mb' }));
 app.use(bodyParser.json());
