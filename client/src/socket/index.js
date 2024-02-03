@@ -7,5 +7,5 @@ export  const socketInit = () => {
         timeout: 10000,
         transports: ['websocket']
     }
-    return io('http://localhost:3001', options);
+    return io('https://echo-talk.onrender.com', options);
 }
