@@ -11,6 +11,8 @@ export const axiosInstance = async (method, endpoint, payload) => {
             data: payload,
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token"),
+                "Access-Control-Allow-Origin":'*',
+                "Accept":'*/*'
             },
         });
     } catch (error) {
