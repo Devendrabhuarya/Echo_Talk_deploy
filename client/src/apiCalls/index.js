@@ -4,10 +4,10 @@ import axios from "axios";
 // Export your axios instance function
 export const axiosInstance = async (method, endpoint, payload) => {
     try {
-        console.log(payload);
+   
         return await axios({
             method,
-            url: endpoint,
+            url: 'http://localhost:3001' + endpoint,
             data: payload,
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token"),
