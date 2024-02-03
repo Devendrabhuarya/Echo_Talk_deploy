@@ -7,7 +7,7 @@ export const axiosInstance = async (method, endpoint, payload) => {
    
         return await axios({
             method,
-            url: 'http://localhost:3001' + endpoint,
+            url: 'https://echo-talk.onrender.com' + endpoint,
             data: payload,
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token"),
