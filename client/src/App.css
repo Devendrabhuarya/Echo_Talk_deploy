@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    background: #121212;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+}
+
+.container {
+    width: 1200px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.roomTopic {
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.speakerName {
+    font-family: 'Hedvig Letters Serif', serif;
+}
+
+.AllVoiceRoom {
+    font-family: 'Hedvig Letters Serif', serif;
+}
+
+.textSerif{
+    font-family: 'Hedvig Letters Serif', serif;
+}
+
+.textSerifRoabot{
+    font-family: 'Roboto', sans-serif;
+}
