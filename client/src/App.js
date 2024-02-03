@@ -18,11 +18,11 @@ function App() {
     const { loader } = useLoaderWithRefresh();
     return (
 
-        loader ? (
-            <>
-                <Loader text={'loading please wait ....'} />
-            </>
-        ) : (
+        // loader ? (
+        //     <>
+        //         <Loader text={'loading please wait ....'} />
+        //     </>
+        // ) : (
             <BrowserRouter>
                 <Navigation />
                 <Routes>
@@ -51,7 +51,7 @@ function App() {
                 <Route path="/login" element={<Login />} /> */}
                 </Routes>
             </BrowserRouter >
-        )
+        // )
     );
 }
 
