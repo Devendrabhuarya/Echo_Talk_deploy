@@ -5,9 +5,14 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const ACTIONS = require('./actions');
 const roomService = require('./service/roomService');
+const cors = require("cors");
 
 const app = express();
+app.use(cors(corsOptions));
 const server = require('http').createServer(app);
+const corsOptions = {
+    origin: "https://echo-talk-devendra-arun-vt.onrender.com" // frontend URI (ReactJS)
+}
 const io = require('socket.io')(server, {
     cors: {
         origin: 'https://echo-talk-devendra-arun-vt.onrender.com',
