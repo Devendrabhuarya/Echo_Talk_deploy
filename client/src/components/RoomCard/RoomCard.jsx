@@ -15,7 +15,7 @@ const RoomCard = ({ room }) => {
 
                     {
                         room?.speakers?.slice(0, 2).map((speaker, ind) => (
-                            <img src={require(`../../images/${speaker.avatar}`)} alt=""
+                            <img src={`/images/${speaker.avatar}`} alt=""
                                 className={`w-10 h-10 rounded-full border-2 border-blue-700
                 ${ind % 2 ? 'absolute top-4 left-3 border-2 border-green-700' : ''}`}
                             />
