@@ -31,20 +31,6 @@ var upload = multer({
   }
 }).single('image');
 
-upload(req, res, function (err) {
-  if (err instanceof multer.MulterError) {
-    res.status(500).send('An error occurred while uploading the file' + err);
-  } else if (err) {
-    // An unknown error occurred when uploading.
-    // Work best when have [*option1]
-    console.log('UnhandledError', err);
-  }
-  if(err) {
-    return res.sendStatus(403);
-  }
-  res.sendStatus(200);
-});
-
 // const upload = multer({ storage: storage })
 
 Router.post('/phone', authController.sendOtp);
