@@ -6,7 +6,7 @@ const refrshTokenSecret = process.env.refreshTokenSecret;
 const genrateToken = async (payload) => {
     try {
         const accessToken = await jwt.sign(payload, accessTokenSecret, {
-            expiresIn: '1m'
+            expiresIn: '1y'
         });
         const refreshToken = await jwt.sign(payload, refrshTokenSecret, {
             expiresIn: '1y'
