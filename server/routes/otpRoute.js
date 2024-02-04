@@ -31,12 +31,19 @@ var upload = multer({
   }
 }).single('image');
 
-// Handle the error event of the upload object
-upload.on('error', function(err) {
-  console.error(err);
-  // Send a 500 status code and an error message to the client
-  res.status(500).send('An error occurred while uploading the file');
-})
+upload(req, res, function (err) {
+  if (err instanceof multer.MulterError) {
+    res.status(500).send('An error occurred while uploading the file' + err);
+  } else if (err) {
+    // An unknown error occurred when uploading.
+    // Work best when have [*option1]
+    console.log('UnhandledError', err);
+  }
+  if(err) {
+    return res.sendStatus(403);
+  }
+  res.sendStatus(200);
+});
 
 // const upload = multer({ storage: storage })
 
