@@ -16,8 +16,29 @@ const storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + uniqueSuffix)
     }
 })
+var upload = multer({
+  storage: storage,
+  fileFilter: function(req, file, cb) {
+    // Only accept image files
+    if (!file.mimetype.startsWith('image/')) {
+      return cb(new Error('Only image files are allowed'), false);
+    }
+    cb(null, true);
+  },
+  limits: {
+    // Limit the file size to 1MB
+    fileSize: 1024 * 1024
+  }
+});
 
-const upload = multer({ storage: storage })
+// Handle the error event of the upload object
+upload.on('error', function(err) {
+  console.error(err);
+  // Send a 500 status code and an error message to the client
+  res.status(500).send('An error occurred while uploading the file');
+})
+
+// const upload = multer({ storage: storage })
 
 Router.post('/phone', authController.sendOtp);
 Router.post('/verify', authController.verifyOtp);
