@@ -6,7 +6,18 @@ const authMiddelware = require('../middelware/auth-middelware');
 const userController = require('../controller/user-controller');
 
 const multer = require('multer');
-const upload = multer({ dest: '../client/public/images' });
+// const upload = multer({ dest: '../client/public/images' });
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '../client/public/images')
+    },
+    filename: function (req, file, cb) {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+        cb(null, file.fieldname + '-' + uniqueSuffix)
+    }
+})
+
+const upload = multer({ storage: storage })
 
 Router.post('/phone', authController.sendOtp);
 Router.post('/verify', authController.verifyOtp);
