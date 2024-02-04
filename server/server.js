@@ -11,7 +11,8 @@ const app = express();
 
 const server = require('http').createServer(app);
 const corsOptions = {
-    origin: "https://echo-talk-devendra-arun-vt.onrender.com" // frontend URI (ReactJS)
+    origin: "https://echo-talk-devendra-arun-vt.onrender.com", // frontend URI (ReactJS)
+     credentials: true
 }
 const io = require('socket.io')(server, {
     cors: {
