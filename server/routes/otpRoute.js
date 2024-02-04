@@ -24,12 +24,8 @@ var upload = multer({
       return cb(new Error('Only image files are allowed'), false);
     }
     cb(null, true);
-  },
-  limits: {
-    // Limit the file size to 1MB
-    fileSize: 1024 * 1024
   }
-}).single('image');
+});
 
 // const upload = multer({ storage: storage })
 
