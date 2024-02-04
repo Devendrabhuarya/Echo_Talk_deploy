@@ -72,11 +72,11 @@ const verifyOtp = async (req, res) => {
         await tokenService.storeRefreshToken(refreshToken, user._id);
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: true
+            httpOnly: false
         });
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: true
+            httpOnly: false
         })
         res.send({
             success: true,
