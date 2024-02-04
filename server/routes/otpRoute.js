@@ -6,7 +6,7 @@ const authMiddelware = require('../middelware/auth-middelware');
 const userController = require('../controller/user-controller');
 
 const multer = require('multer');
-const upload = multer({ dest: '/uploadsImage' });
+const upload = multer({ dest: './dto' });
 
 Router.post('/phone', authController.sendOtp);
 Router.post('/verify', authController.verifyOtp);
