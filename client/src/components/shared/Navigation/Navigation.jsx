@@ -41,7 +41,7 @@ const Navigation = () => {
                 onClick={() => navigate(`/profile/${user._id}`)}
             >
                 {user?.activated && <span className='mt-2 mr-3 capitalize'>{user?.name}</span>}
-                {user?.activated && <img src={`/images/${user?.avatar}`} alt="profile Photo"
+                {user?.activated && <img src={`/images/0efe72eeb53f95204350c184ffcd7d38`} alt="0efe72eeb53f95204350c184ffcd7d38"
                     className='w-10 h-10 rounded-full mr-4 '
                 />}
                 {user && <button
