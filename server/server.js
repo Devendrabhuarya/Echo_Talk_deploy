@@ -25,6 +25,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json({ limit: '8mb' }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use((req, res, next) => {
+  // Set the origin to the exact client origin
+  res.header("Access-Control-Allow-Origin", "https://echo-talk-devendra-arun-vt.onrender.com");
+  // Allow credentials for cross-origin requests
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
 
 const otpRoutes = require('./routes/otpRoute');
 
