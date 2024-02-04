@@ -161,11 +161,11 @@ const refresh = async (req, res) => {
         }
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: true
+           httpOnly: false
         });
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: true
+           httpOnly: false
         })
         return res.send({
             success: true,
