@@ -9,6 +9,7 @@ export const axiosInstance = async (method, endpoint, payload) => {
             method,
             url: 'https://echo-talk.onrender.com' + endpoint,
             data: payload,
+            credentials: 'include',
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token"),
                 "Access-Control-Allow-Origin":'*',
