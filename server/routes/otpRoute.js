@@ -29,7 +29,7 @@ var upload = multer({
     // Limit the file size to 1MB
     fileSize: 1024 * 1024
   }
-})..single('image');
+}).single('image');
 
 // Handle the error event of the upload object
 upload.on('error', function(err) {
