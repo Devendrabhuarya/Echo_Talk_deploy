@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json({ limit: '8mb' }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-const morgan = require("morgan");
+app.use(morgan("dev"));
 app.use((req, res, next) => {
   // Set the origin to the exact client origin
   res.header("Access-Control-Allow-Origin", "https://echo-talk-devendra-arun-vt.onrender.com");
