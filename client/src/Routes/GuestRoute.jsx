@@ -3,9 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const GuestRoute = ({ children }) => {
-    const { isAuth } = useSelector(state => state.auth);
+    const { user,isAuth } = useSelector(state => state.auth);
     const navigate = useNavigate('/');
     useEffect(() => {
+          if(!user) {
+            localStorage.clear('token');
+            navigate('/');
+        }
         if (isAuth) {
             navigate('/rooms');
         }
