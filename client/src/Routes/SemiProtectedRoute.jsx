@@ -14,7 +14,7 @@ const SemiProtectedRoute = ({ children }) => {
         else if (isAuth && user?.activated)
             navigate('/rooms')
 
-    }, []);
+    }, [user]);
     return (
         <div>
             {children}
