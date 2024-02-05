@@ -13,7 +13,7 @@ const ProtectedRoute = ({ children }) => {
             navigate('/active');
         } else if (isAuth && user?.activated)
             navigate('/rooms')
-    }, []);
+    }, [user]);
 
 
     return (
