@@ -9,10 +9,6 @@ const SemiProtectedRoute = ({ children }) => {
     const navigate = useNavigate('/');
 
     useEffect(() => {
-        if(!user) {
-            localStorage.clear('token');
-            navigate('/');
-        }
         if (!isAuth || !user){       
          navigate('/');
         }
